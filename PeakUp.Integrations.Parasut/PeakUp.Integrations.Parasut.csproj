@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0311011-B808-4BAB-A503-6B086A08B2A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PeakUp.Integrations.Parasut</RootNamespace>
+    <AssemblyName>PeakUp.Integrations.Parasut</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PeakUp.Integrations.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PeakUp.Integrations.Core.0.1.0\lib\net452\PeakUp.Integrations.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PeakUp.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PeakUp.Utilities.1.0.0\lib\net452\PeakUp.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\AccountsApi.cs" />
+    <Compile Include="Api\ApiHomeApi.cs" />
+    <Compile Include="Api\BankFeesApi.cs" />
+    <Compile Include="Api\ContactsApi.cs" />
+    <Compile Include="Api\EArchivesApi.cs" />
+    <Compile Include="Api\EInvoiceInboxesApi.cs" />
+    <Compile Include="Api\EInvoicesApi.cs" />
+    <Compile Include="Api\EmployeesApi.cs" />
+    <Compile Include="Api\ItemCategoriesApi.cs" />
+    <Compile Include="Api\ParasutApiSettings.cs" />
+    <Compile Include="Api\ProductsApi.cs" />
+    <Compile Include="Api\PurchaseBillsApi.cs" />
+    <Compile Include="Api\SalariesApi.cs" />
+    <Compile Include="Api\SalesInvoicesApi.cs" />
+    <Compile Include="Api\TagsApi.cs" />
+    <Compile Include="Api\TaxesApi.cs" />
+    <Compile Include="Api\TrackableJobsApi.cs" />
+    <Compile Include="Api\TransactionsApi.cs" />
+    <Compile Include="Client\ApiClient.cs" />
+    <Compile Include="Client\ApiException.cs" />
+    <Compile Include="Client\ApiResponse.cs" />
+    <Compile Include="Client\Configuration.cs" />
+    <Compile Include="Client\ExceptionFactory.cs" />
+    <Compile Include="Client\IApiAccessor.cs" />
+    <Compile Include="Client\ParasutClient.cs" />
+    <Compile Include="Helper\IPaged.cs" />
+    <Compile Include="Helper\Paged.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AccountAttributes.cs" />
+    <Compile Include="Model\AccountForm.cs" />
+    <Compile Include="Model\AccountForm1.cs" />
+    <Compile Include="Model\BankFee.cs" />
+    <Compile Include="Model\BankFeeAttributes.cs" />
+    <Compile Include="Model\BankFeeForm.cs" />
+    <Compile Include="Model\BankFeeForm1.cs" />
+    <Compile Include="Model\CompanyIdaccountsData.cs" />
+    <Compile Include="Model\CompanyIdbankFeesData.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataRelationshipsCategory.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataRelationshipsCategoryData.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataRelationshipsTags.cs" />
+    <Compile Include="Model\CompanyIdbankFeesDataRelationshipsTagsData.cs" />
+    <Compile Include="Model\CompanyIdbankFeesidpaymentsData.cs" />
+    <Compile Include="Model\CompanyIdbankFeesidpaymentsDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdcontactsData.cs" />
+    <Compile Include="Model\CompanyIdcontactsDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdcontactsDataRelationshipsContactPeople.cs" />
+    <Compile Include="Model\CompanyIdcontactsDataRelationshipsContactPeopleAttributes.cs" />
+    <Compile Include="Model\CompanyIdcontactsDataRelationshipsContactPeopleData.cs" />
+    <Compile Include="Model\CompanyIdcontactsidcontactCreditTransactionsData.cs" />
+    <Compile Include="Model\CompanyIdcontactsidcontactCreditTransactionsDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdcontactsidcontactDebitTransactionsData.cs" />
+    <Compile Include="Model\CompanyIdcontactsidcontactDebitTransactionsDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdeArchivesData.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataAttributesExciseDutyCodes.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataAttributesInternetSale.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataAttributesShipment.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataRelationshipsSalesInvoice.cs" />
+    <Compile Include="Model\CompanyIdeArchivesDataRelationshipsSalesInvoiceData.cs" />
+    <Compile Include="Model\CompanyIdeInvoicesData.cs" />
+    <Compile Include="Model\CompanyIdeInvoicesDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdemployeesData.cs" />
+    <Compile Include="Model\CompanyIdemployeesDataRelationships.cs" />
+    <Compile Include="Model\CompanyIditemCategoriesData.cs" />
+    <Compile Include="Model\CompanyIdproductsData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataRelationshipsPaidByEmployee.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataRelationshipsPaidByEmployeeData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataRelationshipsSupplier.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsbasicDataRelationshipsSupplierData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataAttributes.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetails.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetailsAttributes.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetailsData.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetailsRelationships.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetailsRelationshipsProduct.cs" />
+    <Compile Include="Model\CompanyIdpurchaseBillsdetailedDataRelationshipsDetailsRelationshipsProductData.cs" />
+    <Compile Include="Model\CompanyIdsalariesData.cs" />
+    <Compile Include="Model\CompanyIdsalariesDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdsalesInvoicesData.cs" />
+    <Compile Include="Model\CompanyIdsalesInvoicesDataRelationships.cs" />
+    <Compile Include="Model\CompanyIdsalesInvoicesDataRelationshipsDetails.cs" />
+    <Compile Include="Model\CompanyIdsalesInvoicesDataRelationshipsDetailsAttributes.cs" />
+    <Compile Include="Model\CompanyIdsalesInvoicesDataRelationshipsDetailsData.cs" />
+    <Compile Include="Model\CompanyIdtagsData.cs" />
+    <Compile Include="Model\CompanyIdtaxesData.cs" />
+    <Compile Include="Model\CompanyIdtaxesDataAttributes.cs" />
+    <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\ContactAttributes.cs" />
+    <Compile Include="Model\ContactCollectionForm.cs" />
+    <Compile Include="Model\ContactCollectionFormAttributes.cs" />
+    <Compile Include="Model\ContactForm.cs" />
+    <Compile Include="Model\ContactForm1.cs" />
+    <Compile Include="Model\ContactPaymentForm.cs" />
+    <Compile Include="Model\ContactPaymentFormAttributes.cs" />
+    <Compile Include="Model\ContactPerson.cs" />
+    <Compile Include="Model\ContactPersonAttributes.cs" />
+    <Compile Include="Model\EArchive.cs" />
+    <Compile Include="Model\EArchiveAttributes.cs" />
+    <Compile Include="Model\EArchiveForm.cs" />
+    <Compile Include="Model\EArchiveFormAttributes.cs" />
+    <Compile Include="Model\EDocumentCommonForm.cs" />
+    <Compile Include="Model\EDocumentCommonFormAttributes.cs" />
+    <Compile Include="Model\EDocumentPdf.cs" />
+    <Compile Include="Model\EDocumentPdfAttributes.cs" />
+    <Compile Include="Model\EInvoice.cs" />
+    <Compile Include="Model\EInvoiceAttributes.cs" />
+    <Compile Include="Model\EInvoiceForm.cs" />
+    <Compile Include="Model\EInvoiceFormAttributes.cs" />
+    <Compile Include="Model\EInvoiceInbox.cs" />
+    <Compile Include="Model\EInvoiceInboxAttributes.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\EmployeeAttributes.cs" />
+    <Compile Include="Model\EmployeeForm.cs" />
+    <Compile Include="Model\EmployeeForm1.cs" />
+    <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\InlineResponse200.cs" />
+    <Compile Include="Model\InlineResponse2001.cs" />
+    <Compile Include="Model\InlineResponse20010.cs" />
+    <Compile Include="Model\InlineResponse20010Attributes.cs" />
+    <Compile Include="Model\InlineResponse20010Data.cs" />
+    <Compile Include="Model\InlineResponse20010Included.cs" />
+    <Compile Include="Model\InlineResponse20010Relationships.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsActiveEDocument.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsActiveEDocumentData.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsDetails.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsDetailsData.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsPaymentsTx.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsPaymentsTxData.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsSharings.cs" />
+    <Compile Include="Model\InlineResponse20010RelationshipsSharingsData.cs" />
+    <Compile Include="Model\InlineResponse20011.cs" />
+    <Compile Include="Model\InlineResponse20011Attributes.cs" />
+    <Compile Include="Model\InlineResponse20011Data.cs" />
+    <Compile Include="Model\InlineResponse2001Data.cs" />
+    <Compile Include="Model\InlineResponse2001DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationships.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsCompanies.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsCompaniesData.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsProfile.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsProfileData.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsUserRoles.cs" />
+    <Compile Include="Model\InlineResponse2001DataRelationshipsUserRolesData.cs" />
+    <Compile Include="Model\InlineResponse2001Included.cs" />
+    <Compile Include="Model\InlineResponse2002.cs" />
+    <Compile Include="Model\InlineResponse2002Attributes.cs" />
+    <Compile Include="Model\InlineResponse2002Data.cs" />
+    <Compile Include="Model\InlineResponse2002Included.cs" />
+    <Compile Include="Model\InlineResponse2002Relationships.cs" />
+    <Compile Include="Model\InlineResponse2002RelationshipsContactPeople.cs" />
+    <Compile Include="Model\InlineResponse2002RelationshipsContactPeopleData.cs" />
+    <Compile Include="Model\InlineResponse2002RelationshipsContactPortal.cs" />
+    <Compile Include="Model\InlineResponse2002RelationshipsContactPortalData.cs" />
+    <Compile Include="Model\InlineResponse2003.cs" />
+    <Compile Include="Model\InlineResponse2003Data.cs" />
+    <Compile Include="Model\InlineResponse2003DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2003Included.cs" />
+    <Compile Include="Model\InlineResponse2004.cs" />
+    <Compile Include="Model\InlineResponse2004Data.cs" />
+    <Compile Include="Model\InlineResponse2004DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2005.cs" />
+    <Compile Include="Model\InlineResponse2005Attributes.cs" />
+    <Compile Include="Model\InlineResponse2005Data.cs" />
+    <Compile Include="Model\InlineResponse2006.cs" />
+    <Compile Include="Model\InlineResponse2006Data.cs" />
+    <Compile Include="Model\InlineResponse2006DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2006DataRelationships.cs" />
+    <Compile Include="Model\InlineResponse2006DataRelationshipsInvoice.cs" />
+    <Compile Include="Model\InlineResponse2006DataRelationshipsInvoiceData.cs" />
+    <Compile Include="Model\InlineResponse2006Included.cs" />
+    <Compile Include="Model\InlineResponse2007.cs" />
+    <Compile Include="Model\InlineResponse2007Attributes.cs" />
+    <Compile Include="Model\InlineResponse2007Data.cs" />
+    <Compile Include="Model\InlineResponse2007Included.cs" />
+    <Compile Include="Model\InlineResponse2007Relationships.cs" />
+    <Compile Include="Model\InlineResponse2007RelationshipsManagedByUser.cs" />
+    <Compile Include="Model\InlineResponse2007RelationshipsManagedByUserData.cs" />
+    <Compile Include="Model\InlineResponse2007RelationshipsManagedByUserRole.cs" />
+    <Compile Include="Model\InlineResponse2008.cs" />
+    <Compile Include="Model\InlineResponse2008Attributes.cs" />
+    <Compile Include="Model\InlineResponse2008Data.cs" />
+    <Compile Include="Model\InlineResponse2008Included.cs" />
+    <Compile Include="Model\InlineResponse2008Relationships.cs" />
+    <Compile Include="Model\InlineResponse2008RelationshipsSubcategories.cs" />
+    <Compile Include="Model\InlineResponse2009.cs" />
+    <Compile Include="Model\InlineResponse2009Attributes.cs" />
+    <Compile Include="Model\InlineResponse2009Data.cs" />
+    <Compile Include="Model\InlineResponse200Attributes.cs" />
+    <Compile Include="Model\InlineResponse200Data.cs" />
+    <Compile Include="Model\InlineResponse200Meta.cs" />
+    <Compile Include="Model\InlineResponse200Meta1.cs" />
+    <Compile Include="Model\InlineResponse201.cs" />
+    <Compile Include="Model\InlineResponse2011.cs" />
+    <Compile Include="Model\InlineResponse20110.cs" />
+    <Compile Include="Model\InlineResponse20110Data.cs" />
+    <Compile Include="Model\InlineResponse20110Included.cs" />
+    <Compile Include="Model\InlineResponse20111.cs" />
+    <Compile Include="Model\InlineResponse20112.cs" />
+    <Compile Include="Model\InlineResponse20113.cs" />
+    <Compile Include="Model\InlineResponse20113Data.cs" />
+    <Compile Include="Model\InlineResponse2011Data.cs" />
+    <Compile Include="Model\InlineResponse2011Included.cs" />
+    <Compile Include="Model\InlineResponse2012.cs" />
+    <Compile Include="Model\InlineResponse2012Data.cs" />
+    <Compile Include="Model\InlineResponse2012DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2012DataRelationships.cs" />
+    <Compile Include="Model\InlineResponse2012DataRelationshipsPayable.cs" />
+    <Compile Include="Model\InlineResponse2012DataRelationshipsPayableData.cs" />
+    <Compile Include="Model\InlineResponse2012DataRelationshipsTx.cs" />
+    <Compile Include="Model\InlineResponse2012DataRelationshipsTxData.cs" />
+    <Compile Include="Model\InlineResponse2012Included.cs" />
+    <Compile Include="Model\InlineResponse2013.cs" />
+    <Compile Include="Model\InlineResponse2014.cs" />
+    <Compile Include="Model\InlineResponse2014Data.cs" />
+    <Compile Include="Model\InlineResponse2014DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2014DataRelationships.cs" />
+    <Compile Include="Model\InlineResponse2014DataRelationshipsDebitAccount.cs" />
+    <Compile Include="Model\InlineResponse2014DataRelationshipsDebitAccountData.cs" />
+    <Compile Include="Model\InlineResponse2014DataRelationshipsPayments.cs" />
+    <Compile Include="Model\InlineResponse2014DataRelationshipsPaymentsData.cs" />
+    <Compile Include="Model\InlineResponse2014Included.cs" />
+    <Compile Include="Model\InlineResponse2015.cs" />
+    <Compile Include="Model\InlineResponse2015Data.cs" />
+    <Compile Include="Model\InlineResponse2015DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2016.cs" />
+    <Compile Include="Model\InlineResponse2017.cs" />
+    <Compile Include="Model\InlineResponse2018.cs" />
+    <Compile Include="Model\InlineResponse2019.cs" />
+    <Compile Include="Model\InlineResponse2019Data.cs" />
+    <Compile Include="Model\InlineResponse2019DataAttributes.cs" />
+    <Compile Include="Model\InlineResponse2019DataRelationships.cs" />
+    <Compile Include="Model\InlineResponse2019DataRelationshipsActiveEDocument.cs" />
+    <Compile Include="Model\InlineResponse2019DataRelationshipsActiveEDocumentData.cs" />
+    <Compile Include="Model\InlineResponse2019DataRelationshipsRecurrencePlan.cs" />
+    <Compile Include="Model\InlineResponse2019DataRelationshipsRecurrencePlanData.cs" />
+    <Compile Include="Model\InlineResponse2019Included.cs" />
+    <Compile Include="Model\InlineResponse400.cs" />
+    <Compile Include="Model\InlineResponse400Errors.cs" />
+    <Compile Include="Model\ItemCategory.cs" />
+    <Compile Include="Model\ItemCategoryAttributes.cs" />
+    <Compile Include="Model\ItemCategoryForm.cs" />
+    <Compile Include="Model\ItemCategoryForm1.cs" />
+    <Compile Include="Model\ListMeta.cs" />
+    <Compile Include="Model\Me.cs" />
+    <Compile Include="Model\MeAttributes.cs" />
+    <Compile Include="Model\ParasutInvoice.cs" />
+    <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\PaymentAttributes.cs" />
+    <Compile Include="Model\PaymentForm.cs" />
+    <Compile Include="Model\PaymentForm1.cs" />
+    <Compile Include="Model\PaymentForm2.cs" />
+    <Compile Include="Model\PaymentForm3.cs" />
+    <Compile Include="Model\PaymentForm4.cs" />
+    <Compile Include="Model\PaymentFormAttributes.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductAttributes.cs" />
+    <Compile Include="Model\ProductForm.cs" />
+    <Compile Include="Model\ProductForm1.cs" />
+    <Compile Include="Model\PurchaseBill.cs" />
+    <Compile Include="Model\PurchaseBillAttributes.cs" />
+    <Compile Include="Model\PurchaseBillBasicForm.cs" />
+    <Compile Include="Model\PurchaseBillBasicFormAttributes.cs" />
+    <Compile Include="Model\PurchaseBillDetail.cs" />
+    <Compile Include="Model\PurchaseBillDetailAttributes.cs" />
+    <Compile Include="Model\PurchaseBillDetailedForm.cs" />
+    <Compile Include="Model\PurchaseBillDetailedFormAttributes.cs" />
+    <Compile Include="Model\PurchaseBillForm.cs" />
+    <Compile Include="Model\PurchaseBillForm1.cs" />
+    <Compile Include="Model\PurchaseBillForm2.cs" />
+    <Compile Include="Model\PurchaseBillForm3.cs" />
+    <Compile Include="Model\Salary.cs" />
+    <Compile Include="Model\SalaryAttributes.cs" />
+    <Compile Include="Model\SalaryForm.cs" />
+    <Compile Include="Model\SalaryForm1.cs" />
+    <Compile Include="Model\SalesInvoice.cs" />
+    <Compile Include="Model\SalesInvoiceAttributes.cs" />
+    <Compile Include="Model\SalesInvoiceDetail.cs" />
+    <Compile Include="Model\SalesInvoiceDetailAttributes.cs" />
+    <Compile Include="Model\SalesInvoiceForm.cs" />
+    <Compile Include="Model\SalesInvoiceForm1.cs" />
+    <Compile Include="Model\SalesInvoiceForm2.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\TagAttributes.cs" />
+    <Compile Include="Model\TagForm.cs" />
+    <Compile Include="Model\TagForm1.cs" />
+    <Compile Include="Model\Tax.cs" />
+    <Compile Include="Model\TaxAttributes.cs" />
+    <Compile Include="Model\TaxForm.cs" />
+    <Compile Include="Model\TaxForm1.cs" />
+    <Compile Include="Model\TrackableJob.cs" />
+    <Compile Include="Model\TrackableJobAttributes.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionAttributes.cs" />
+    <Compile Include="Model\TransactionForm.cs" />
+    <Compile Include="Model\TransactionForm1.cs" />
+    <Compile Include="ParasutProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

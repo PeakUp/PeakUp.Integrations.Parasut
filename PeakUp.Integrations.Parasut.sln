@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeakUp.Integrations.Parasut.Terminal", "PeakUp.Integrations.Parasut.Terminal\PeakUp.Integrations.Parasut.Terminal.csproj", "{13F08E92-88A3-4AD1-B1C7-B97E4890A6F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeakUp.Integrations.Parasut", "PeakUp.Integrations.Parasut\PeakUp.Integrations.Parasut.csproj", "{D0311011-B808-4BAB-A503-6B086A08B2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F08E92-88A3-4AD1-B1C7-B97E4890A6F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F08E92-88A3-4AD1-B1C7-B97E4890A6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F08E92-88A3-4AD1-B1C7-B97E4890A6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F08E92-88A3-4AD1-B1C7-B97E4890A6F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0311011-B808-4BAB-A503-6B086A08B2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0311011-B808-4BAB-A503-6B086A08B2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0311011-B808-4BAB-A503-6B086A08B2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0311011-B808-4BAB-A503-6B086A08B2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

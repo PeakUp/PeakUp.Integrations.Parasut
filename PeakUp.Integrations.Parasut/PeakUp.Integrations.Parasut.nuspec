@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>PeakUp.Integrations.Parasut</id>
+    <version>0.1.0</version>
+    <title>PeakUp Integrations Parasut</title>
+    <authors>PeakUp Information Technologies</authors>
+    <owners>peakup</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package includes integrations for Parasut Api.</description>
+    <releaseNotes>Initial create</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>peakup integrations parasut</tags>
+  </metadata>
+</package>
