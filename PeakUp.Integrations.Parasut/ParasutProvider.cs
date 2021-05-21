@@ -16,9 +16,9 @@ namespace PeakUp.Integrations.Parasut
     {
         public ParasutClient Client { get; protected set; }
         public string Url { get; set; }
-        public ParasutProvider(string url = null, string version = null, string clientId = null, string clientSecret = null, string username = null, string password = null)
+        public ParasutProvider(string url = null, string version = null, string companyId = null, string clientId = null, string clientSecret = null, string username = null, string password = null)
         {
-            Client = new ParasutClient(url, version, clientId, clientSecret, username, password);
+            Client = new ParasutClient(url, version, companyId, clientId, clientSecret, username, password);
             Url = Client.Url;
         }
 

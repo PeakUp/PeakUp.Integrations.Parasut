@@ -117,7 +117,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 ListContacts (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
+        InlineResponse2002 ListContacts (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
 
         /// <summary>
         /// Index
@@ -137,7 +137,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        ApiResponse<InlineResponse2002> ListContactsWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
+        ApiResponse<InlineResponse2002> ListContactsWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
         /// <summary>
         /// Ödeme
         /// </summary>
@@ -312,7 +312,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>Task of InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> ListContactsAsync (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
+        System.Threading.Tasks.Task<InlineResponse2002> ListContactsAsync (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
 
         /// <summary>
         /// Index
@@ -332,7 +332,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> ListContactsAsyncWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> ListContactsAsyncWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null);
         /// <summary>
         /// Ödeme
         /// </summary>
@@ -1092,9 +1092,9 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>InlineResponse2002</returns>
-        public InlineResponse2002 ListContacts (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
+        public InlineResponse2002 ListContacts (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
         {
-             ApiResponse<InlineResponse2002> localVarResponse = ListContactsWithHttpInfo(companyId, filterName, filterEmail, filterTaxNumber, filterTaxOffice, filterCity, sort, pageNumber, pageSize, include);
+             ApiResponse<InlineResponse2002> localVarResponse = ListContactsWithHttpInfo(companyId, filterName, filterEmail, filterTaxNumber, filterTaxOffice, filterCity,filterAccountType, sort, pageNumber, pageSize, include);
              return localVarResponse.Data;
         }
 
@@ -1113,7 +1113,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        public ApiResponse< InlineResponse2002 > ListContactsWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
+        public ApiResponse< InlineResponse2002 > ListContactsWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null,string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
         {
             // verify the required parameter 'companyId' is set
             if (companyId == null)
@@ -1150,6 +1150,7 @@ namespace PeakUp.Integrations.Parasut.Api
             if (filterTaxNumber != null) localVarQueryParams.Add("filter[tax_number]", Configuration.ApiClient.ParameterToString(filterTaxNumber)); // query parameter
             if (filterTaxOffice != null) localVarQueryParams.Add("filter[tax_office]", Configuration.ApiClient.ParameterToString(filterTaxOffice)); // query parameter
             if (filterCity != null) localVarQueryParams.Add("filter[city]", Configuration.ApiClient.ParameterToString(filterCity)); // query parameter
+            if (filterAccountType != null) localVarQueryParams.Add("filter[account_type]", Configuration.ApiClient.ParameterToString(filterAccountType)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (pageNumber != null) localVarQueryParams.Add("page[number]", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("page[size]", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
@@ -1196,9 +1197,9 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>Task of InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> ListContactsAsync (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
+        public async System.Threading.Tasks.Task<InlineResponse2002> ListContactsAsync (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
         {
-             ApiResponse<InlineResponse2002> localVarResponse = await ListContactsAsyncWithHttpInfo(companyId, filterName, filterEmail, filterTaxNumber, filterTaxOffice, filterCity, sort, pageNumber, pageSize, include);
+             ApiResponse<InlineResponse2002> localVarResponse = await ListContactsAsyncWithHttpInfo(companyId, filterName, filterEmail, filterTaxNumber, filterTaxOffice, filterCity,filterAccountType, sort, pageNumber, pageSize, include);
              return localVarResponse.Data;
 
         }
@@ -1218,7 +1219,7 @@ namespace PeakUp.Integrations.Parasut.Api
         /// <param name="pageSize">Page Size (optional, default to 15)</param>
         /// <param name="include">Response ile birlikte geri dönmesini istediğiniz ilişkiler - *Available: category, contact_portal, contact_people* (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> ListContactsAsyncWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> ListContactsAsyncWithHttpInfo (int? companyId, string filterName = null, string filterEmail = null, string filterTaxNumber = null, string filterTaxOffice = null, string filterCity = null, string filterAccountType = null, string sort = null, int? pageNumber = null, int? pageSize = null, string include = null)
         {
             // verify the required parameter 'companyId' is set
             if (companyId == null)
@@ -1255,6 +1256,7 @@ namespace PeakUp.Integrations.Parasut.Api
             if (filterTaxNumber != null) localVarQueryParams.Add("filter[tax_number]", Configuration.ApiClient.ParameterToString(filterTaxNumber)); // query parameter
             if (filterTaxOffice != null) localVarQueryParams.Add("filter[tax_office]", Configuration.ApiClient.ParameterToString(filterTaxOffice)); // query parameter
             if (filterCity != null) localVarQueryParams.Add("filter[city]", Configuration.ApiClient.ParameterToString(filterCity)); // query parameter
+            if (filterAccountType != null) localVarQueryParams.Add("filter[account_type]", Configuration.ApiClient.ParameterToString(filterAccountType)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (pageNumber != null) localVarQueryParams.Add("page[number]", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("page[size]", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
